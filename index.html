@@ -53,8 +53,11 @@
                             '50%': { opacity: '0' },
                         },
                         'pulse-glow': {
-                            '0%, 100%': { opacity: '0.6', filter: 'brightness(100%)' },
-                            '50%': { opacity: '1', filter: 'brightness(150%)' },
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(34,197,94,0.5), inset 0 0 10px rgba(34,197,94,0.2)' },
+                            '50%': { boxShadow: '0 0 25px rgba(34,197,94,0.8), inset 0 0 15px rgba(34,197,94,0.4)' },
+                        },
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' }
                         }
                     }
                 }
@@ -282,8 +285,10 @@
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="text-xs text-slate-500 font-mono">vedant_brain.py</span>
-                                <button id="run-code-btn" class="flex items-center gap-2 px-3 py-1 rounded-md bg-green-500/10 hover:bg-green-500/20 text-green-400 text-xs font-mono transition-colors border border-green-500/20">
-                                    <i class="fas fa-play text-[10px]"></i> RUN
+                                <button id="run-code-btn" class="relative flex items-center gap-2 px-6 py-2 rounded-lg bg-green-500/10 text-green-400 text-xs font-bold font-mono border border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5),inset_0_0_10px_rgba(34,197,94,0.2)] hover:shadow-[0_0_30px_rgba(34,197,94,0.8),inset_0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-500/20 hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md animate-[pulse-glow_3s_infinite]">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                                    <i class="fas fa-play text-[10px] group-hover:scale-110 transition-transform relative z-10 drop-shadow-[0_0_5px_rgba(34,197,94,1)]"></i> 
+                                    <span class="tracking-widest relative z-10 drop-shadow-[0_0_5px_rgba(34,197,94,1)] font-extrabold">RUN</span>
                                 </button>
                             </div>
                         </div>
@@ -874,6 +879,10 @@
 
         if(runBtn) {
             runBtn.addEventListener('click', () => {
+                // Stop glow animation
+                runBtn.classList.remove('animate-[pulse-glow_3s_infinite]');
+                runBtn.style.boxShadow = 'none'; // remove shadow
+                
                 terminal.classList.remove('hidden');
                 terminal.classList.add('flex');
                 terminalLines.innerHTML = '';
@@ -904,6 +913,12 @@
             closeBtn.addEventListener('click', () => {
                 terminal.classList.add('hidden');
                 terminal.classList.remove('flex');
+                
+                // Restart glow animation
+                if(runBtn) {
+                    runBtn.classList.add('animate-[pulse-glow_3s_infinite]');
+                    runBtn.style.boxShadow = ''; // restore shadow from class
+                }
             });
         }
     </script>
