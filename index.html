@@ -234,6 +234,10 @@
                     <span>About</span>
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all group-hover:w-full"></span>
                 </a>
+                <a href="#skills" class="nav-link hover:text-green-400 transition-colors relative group">
+                    <span>Skills</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
+                </a>
                 <a href="#experience" class="nav-link hover:text-accent-purple transition-colors relative group">
                     <span>Experience</span>
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-purple transition-all group-hover:w-full"></span>
@@ -261,6 +265,10 @@
                 <a href="#about" class="mobile-nav-link text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between group">
                     <span>About</span>
                     <i class="fas fa-arrow-right text-accent-cyan opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                </a>
+                <a href="#skills" class="mobile-nav-link text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between group">
+                    <span>Skills</span>
+                    <i class="fas fa-arrow-right text-green-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
                 </a>
                 <a href="#experience" class="mobile-nav-link text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-between group">
                     <span>Experience</span>
@@ -321,6 +329,27 @@
                             <span class="relative z-10 group-hover:text-white transition-colors duration-300">View Projects</span>
                             <div class="absolute inset-0 bg-accent-blue transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0"></div>
                         </a>
+                    </div>
+
+                    <!-- Mobile Tech Stack (visible only on mobile) -->
+                    <div class="hero-reveal sm:hidden mt-6">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-[10px] font-mono border border-white/10">
+                                <i class="fab fa-python text-accent-cyan"></i> Python
+                            </span>
+                            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-[10px] font-mono border border-white/10">
+                                <i class="fab fa-aws text-orange-400"></i> AWS
+                            </span>
+                            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-[10px] font-mono border border-white/10">
+                                <i class="fas fa-brain text-accent-purple"></i> LLMs
+                            </span>
+                            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-[10px] font-mono border border-white/10">
+                                <i class="fab fa-docker text-blue-500"></i> Docker
+                            </span>
+                            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-[10px] font-mono border border-white/10">
+                                <i class="fab fa-react text-blue-300"></i> React
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -389,8 +418,8 @@
             </a>
         </section>
 
-        <!-- Stats / Tech Scroller (Banner) -->
-        <div class="w-full border-y border-white/5 bg-black/20 overflow-hidden py-4 sm:py-6">
+        <!-- Stats / Tech Scroller (Banner) - Hidden on mobile, shown on sm and up -->
+        <div class="hidden sm:block w-full border-y border-white/5 bg-black/20 overflow-hidden py-4 sm:py-6">
             <div class="flex items-center space-x-8 sm:space-x-12 animate-marquee whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity">
                 <!-- Repeated items for marquee effect -->
                 <div class="flex space-x-8 sm:space-x-16 min-w-full" id="tech-marquee">
@@ -430,7 +459,18 @@
                             </p>
                         </div>
                         
-                        <div class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10">
+                        <!-- Honors -->
+                        <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
+                            <h4 class="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-widest mb-2 sm:mb-3">Honors</h4>
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 justify-center md:justify-start">
+                                <span class="px-2 py-1 bg-yellow-500/10 text-yellow-400 text-[9px] sm:text-[10px] font-mono rounded border border-yellow-500/20">Phi Beta Kappa</span>
+                                <span class="px-2 py-1 bg-accent-blue/10 text-accent-blue text-[9px] sm:text-[10px] font-mono rounded border border-accent-blue/20">IEEE HKN</span>
+                                <span class="px-2 py-1 bg-green-500/10 text-green-400 text-[9px] sm:text-[10px] font-mono rounded border border-green-500/20">President's Scholar</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Certification -->
+                        <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
                             <h4 class="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3 sm:mb-4">Certification</h4>
                              <a href="https://www.credly.com/badges/8ba0cf13-4367-4942-aec2-71f693f1e1ed/public_url" target="_blank" class="flex items-center gap-3 sm:gap-4 group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-colors justify-center md:justify-start">
                                 <i class="fab fa-aws text-2xl sm:text-3xl text-orange-400 group-hover:scale-110 transition-transform"></i>
@@ -457,8 +497,96 @@
                             <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">Internships</div>
                         </div>
                         <div class="p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-center hover:bg-white/10 transition-colors">
-                            <div class="text-2xl sm:text-3xl font-bold text-green-400 mb-1">∞</div>
-                            <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">Curiosity</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-green-400 mb-1">2</div>
+                            <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">Leadership</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-12 sm:py-20 px-4 sm:px-6 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4 section-title">
+                        Technical <span class="gradient-text">Arsenal</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                        Tools and technologies I use to bring ideas to life.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Languages -->
+                    <div class="glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/5 hover:border-accent-cyan/30 transition-colors group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-accent-cyan/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-code text-accent-cyan"></i>
+                            </div>
+                            <h3 class="font-bold text-sm sm:text-base">Languages</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Python</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Java</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">C++</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">SQL</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">JavaScript</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Bash</span>
+                        </div>
+                    </div>
+
+                    <!-- AI/ML -->
+                    <div class="glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/5 hover:border-accent-purple/30 transition-colors group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-brain text-accent-purple"></i>
+                            </div>
+                            <h3 class="font-bold text-sm sm:text-base">AI / ML</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">PyTorch</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">TensorFlow</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">LangChain</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">RAG</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">FAISS</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">MCP</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud/DevOps -->
+                    <div class="glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/5 hover:border-orange-400/30 transition-colors group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-orange-400/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-cloud text-orange-400"></i>
+                            </div>
+                            <h3 class="font-bold text-sm sm:text-base">Cloud / DevOps</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">AWS</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Docker</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Kubernetes</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Terraform</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">CI/CD</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Git</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend/Web -->
+                    <div class="glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/5 hover:border-green-400/30 transition-colors group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-green-400/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-server text-green-400"></i>
+                            </div>
+                            <h3 class="font-bold text-sm sm:text-base">Backend / Web</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">FastAPI</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Flask</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Spring Boot</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">Redis</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] sm:text-xs font-mono">REST APIs</span>
                         </div>
                     </div>
                 </div>
