@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vedant Pungliya | AI & Software Architect</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AI Engineer & Software Architect specializing in LLMs, RAG systems, and scalable cloud infrastructure. Building intelligent solutions with PyTorch, AWS, and modern AI technologies.">
+    <meta name="keywords" content="AI Engineer, Machine Learning, LLMs, RAG, PyTorch, AWS, Software Architect, Full Stack Developer">
+    <meta name="author" content="Vedant Pungliya">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vedantpungliya.com/">
+    <meta property="og:title" content="Vedant Pungliya | AI & Software Architect">
+    <meta property="og:description" content="AI Engineer & Software Architect specializing in LLMs, RAG systems, and scalable cloud infrastructure.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vedantpungliya.com/">
+    <meta property="twitter:title" content="Vedant Pungliya | AI & Software Architect">
+    <meta property="twitter:description" content="AI Engineer & Software Architect specializing in LLMs, RAG systems, and scalable cloud infrastructure.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>VP</text></svg>">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -210,9 +231,37 @@
         .section-title {
             letter-spacing: -0.03em;
         }
+
+        /* Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .sr-only:focus,
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: inherit;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
     </style>
 </head>
 <body class="text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-100">
+
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent-cyan focus:text-black focus:rounded-lg focus:font-bold">Skip to main content</a>
 
     <!-- Custom Cursor Elements -->
     <div class="cursor-dot hidden md:block"></div>
@@ -285,7 +334,7 @@
         </div>
     </nav>
 
-    <main class="relative z-10">
+    <main id="main-content" class="relative z-10">
         <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 pb-10 relative overflow-hidden">
             <!-- Decorative Elements - hidden on mobile for performance -->
@@ -325,9 +374,10 @@
                             <span>GitHub</span>
                             <i class="fas fa-arrow-right opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 hidden sm:inline"></i>
                         </a>
-                        <a href="#projects" class="group relative px-5 sm:px-8 py-3 sm:py-4 bg-white text-black font-semibold rounded-full overflow-hidden text-sm sm:text-base">
-                            <span class="relative z-10 group-hover:text-white transition-colors duration-300">View Projects</span>
-                            <div class="absolute inset-0 bg-accent-blue transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0"></div>
+                        <a href="#projects" class="px-5 sm:px-8 py-3 sm:py-4 rounded-full border border-white/10 hover:bg-white/5 transition-all flex items-center gap-2 group text-sm sm:text-base">
+                            <i class="fas fa-folder-open text-lg sm:text-xl"></i>
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 hidden sm:inline"></i>
                         </a>
                     </div>
 
@@ -345,17 +395,31 @@
                             </div>
                             <div class="flex items-center gap-2 sm:gap-3">
                                 <span class="text-[10px] sm:text-xs text-slate-500 font-mono hidden xs:inline">vedant_brain.py</span>
-                                <button id="run-code-btn" class="relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg bg-green-500/10 text-green-400 text-[10px] sm:text-xs font-bold font-mono border border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5),inset_0_0_10px_rgba(34,197,94,0.2)] hover:shadow-[0_0_30px_rgba(34,197,94,0.8),inset_0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-500/20 active:scale-95 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md animate-[pulse-glow_3s_infinite]">
+                                <button id="run-code-btn" aria-label="Run code" aria-describedby="run-code-description" class="relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg bg-green-500/10 text-green-400 text-[10px] sm:text-xs font-bold font-mono border border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5),inset_0_0_10px_rgba(34,197,94,0.2)] hover:shadow-[0_0_30px_rgba(34,197,94,0.8),inset_0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-500/20 active:scale-95 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md animate-[pulse-glow_3s_infinite] focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black">
                                     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
-                                    <i class="fas fa-play text-[8px] sm:text-[10px] group-hover:scale-110 transition-transform relative z-10 drop-shadow-[0_0_5px_rgba(34,197,94,1)]"></i> 
+                                    <i class="fas fa-play text-[8px] sm:text-[10px] group-hover:scale-110 transition-transform relative z-10 drop-shadow-[0_0_5px_rgba(34,197,94,1)]" aria-hidden="true"></i> 
                                     <span class="tracking-widest relative z-10 drop-shadow-[0_0_5px_rgba(34,197,94,1)] font-extrabold">RUN</span>
                                 </button>
+                                <span id="run-code-description" class="sr-only">Execute Python code in the active tab</span>
                             </div>
                         </div>
                         <!-- Code Content -->
-                        <div class="relative p-3 sm:p-6 font-mono text-[10px] sm:text-sm overflow-hidden bg-black/40 rounded-b-xl h-[200px] sm:h-[280px] lg:h-[320px] flex flex-col">
+                        <div class="relative p-3 sm:p-6 font-mono text-[10px] sm:text-sm overflow-hidden bg-black/40 rounded-b-xl h-[220px] sm:h-[280px] lg:h-[320px] flex flex-col">
+                            <!-- Tabs -->
+                            <div class="flex items-center gap-1 mb-2 text-[9px] sm:text-xs" role="tablist" aria-label="Code editor tabs">
+                                <button id="tab-static" role="tab" aria-selected="true" aria-controls="code-static" tabindex="0" class="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-white border border-accent-cyan/40 font-mono flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-black">
+                                    <i class="fas fa-code" aria-hidden="true"></i>
+                                    <span>Demo</span>
+                                </button>
+                                <button id="tab-playground" role="tab" aria-selected="false" aria-controls="code-playground" tabindex="-1" class="px-2.5 sm:px-3 py-1 rounded-md text-white border border-white/10 font-mono flex items-center gap-1 hover:text-white hover:border-accent-purple/40 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-purple focus:ring-offset-2 focus:ring-offset-black">
+                                    <i class="fas fa-terminal" aria-hidden="true"></i>
+                                    <span>Playground</span>
+                                </button>
+                            </div>
+
                             <div id="code-editor" class="flex-grow overflow-auto">
-                                <div class="text-slate-400 leading-relaxed sm:leading-normal">
+                                <!-- Static Demo Code -->
+                                <div id="code-static" class="text-slate-400 leading-relaxed sm:leading-normal">
                                     <span class="text-accent-purple">class</span> <span class="text-yellow-300">Engineer</span>(Human):<br>
                                     &nbsp;&nbsp;<span class="text-accent-cyan">def</span> <span class="text-blue-400">__init__</span>(self):<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;self.stack = [<span class="text-green-400">'PyTorch'</span>, <span class="text-green-400">'AWS'</span>, <span class="text-green-400">'Docker'</span>]<br>
@@ -367,9 +431,13 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coffee.consume()<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-accent-purple">if</span> code.is_revolutionary():<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-accent-purple">return</span> <span class="text-green-400">"Future Created"</span>
+                                    <div class="mt-2 w-1.5 sm:w-2 h-3 sm:h-4 bg-accent-cyan animate-pulse"></div>
                                 </div>
-                                <!-- Blinking Cursor -->
-                                <div class="mt-2 w-1.5 sm:w-2 h-3 sm:h-4 bg-accent-cyan animate-pulse"></div>
+
+                                <!-- Playground Editor -->
+                                <div id="code-playground" class="hidden h-full">
+                                    <textarea id="playground-editor" class="w-full h-full bg-black/40 border border-white/10 rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-slate-200 font-mono resize-none focus:outline-none focus:border-accent-purple/60 focus:ring-1 focus:ring-accent-purple/40" spellcheck="false" placeholder="# Write your own Python here and hit RUN\nclass MyIdea:\n    def launch(self):\n        return 'Hello, Vedant 🚀'"></textarea>
+                                </div>
                             </div>
                             
                             <!-- Terminal Output Overlay -->
@@ -792,6 +860,11 @@
             </div>
         </section>
 
+        <!-- Back to Top Button -->
+        <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 z-40 w-12 h-12 rounded-full bg-accent-cyan/20 hover:bg-accent-cyan/30 border border-accent-cyan/40 flex items-center justify-center text-accent-cyan opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-black">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
         <!-- Footer -->
         <footer class="py-8 sm:py-12 border-t border-white/10 bg-black relative">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
@@ -821,6 +894,85 @@
     <!-- Three.js Background Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
+        // Pyodide setup - Lazy loaded only when needed
+        let pyodide = null;
+        let pyodideReadyPromise = null;
+        let pyodideLoading = false;
+
+        async function loadPyodideIfNeeded() {
+            if (pyodideReadyPromise) return pyodideReadyPromise;
+            if (pyodideLoading) return new Promise(resolve => {
+                const checkInterval = setInterval(() => {
+                    if (pyodideReadyPromise) {
+                        clearInterval(checkInterval);
+                        resolve(pyodideReadyPromise);
+                    }
+                }, 100);
+            });
+
+            pyodideLoading = true;
+            
+            // Dynamically load Pyodide script
+            if (!window.loadPyodide) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js';
+                    script.onload = () => {
+                        if (window.loadPyodide) {
+                            initializePyodide().then(resolve).catch(reject);
+                        } else {
+                            reject(new Error('Pyodide failed to load'));
+                        }
+                    };
+                    script.onerror = () => reject(new Error('Failed to load Pyodide script'));
+                    document.head.appendChild(script);
+                });
+            } else {
+                return initializePyodide();
+            }
+        }
+
+        async function initializePyodide() {
+            pyodideReadyPromise = loadPyodide({
+                indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/"
+            }).then(async (pyo) => {
+                pyodide = pyo;
+                await pyodide.runPythonAsync(`
+import sys, io, traceback
+
+def run_user_code(code_str):
+    buf = io.StringIO()
+    err_buf = io.StringIO()
+    old_out, old_err = sys.stdout, sys.stderr
+    sys.stdout, sys.stderr = buf, err_buf
+    error = None
+    try:
+        compiled = compile(code_str, "<user_code>", "exec")
+        exec(compiled, {})
+    except Exception as e:
+        error = traceback.format_exc()
+    finally:
+        sys.stdout, sys.stderr = old_out, old_err
+    
+    # Store results in globals for easy JS access
+    import __main__
+    __main__.exec_stdout = buf.getvalue()
+    __main__.exec_stderr = err_buf.getvalue()
+    __main__.exec_error = error if error else ""
+    
+    return {"stdout": buf.getvalue(), "stderr": err_buf.getvalue(), "error": error if error else None}
+                `);
+                pyodideLoading = false;
+                return pyodide;
+            }).catch((e) => {
+                console.error("Pyodide failed to load", e);
+                pyodideLoading = false;
+                pyodideReadyPromise = null;
+                throw e;
+            });
+            return pyodideReadyPromise;
+        }
+
         // Check if mobile for performance optimization
         const isMobile = window.innerWidth < 768;
         
@@ -1033,41 +1185,213 @@
             });
         }
 
-        // Terminal Interaction Script
+        // Terminal Interaction & Code Tabs
         const runBtn = document.getElementById('run-code-btn');
         const closeBtn = document.getElementById('close-terminal');
         const terminal = document.getElementById('terminal-output');
         const terminalLines = document.getElementById('terminal-lines');
 
+        const tabStatic = document.getElementById('tab-static');
+        const tabPlayground = document.getElementById('tab-playground');
+        const codeStatic = document.getElementById('code-static');
+        const codePlayground = document.getElementById('code-playground');
+        const playgroundEditor = document.getElementById('playground-editor');
+
+        let activeMode = 'static';
+
+        if (tabStatic && tabPlayground && codeStatic && codePlayground) {
+            tabStatic.addEventListener('click', () => {
+                activeMode = 'static';
+                codeStatic.classList.remove('hidden');
+                codePlayground.classList.add('hidden');
+
+                tabStatic.classList.add('bg-white/5', 'text-white', 'border-accent-cyan/40');
+                tabStatic.classList.remove('text-slate-400');
+
+                tabPlayground.classList.remove('bg-white/5', 'text-white', 'border-accent-cyan/40');
+                tabPlayground.classList.add('text-white', 'border-white/10');
+            });
+
+            tabPlayground.addEventListener('click', () => {
+                activeMode = 'playground';
+                codeStatic.classList.add('hidden');
+                codePlayground.classList.remove('hidden');
+
+                tabPlayground.classList.add('bg-white/5', 'text-white', 'border-accent-purple/40');
+                tabPlayground.classList.remove('text-slate-400');
+
+                tabStatic.classList.remove('bg-white/5', 'text-white', 'border-accent-cyan/40');
+                tabStatic.classList.add('text-white', 'border-white/10');
+            });
+        }
+
         if(runBtn) {
             runBtn.addEventListener('click', () => {
-                // Stop glow animation
-                runBtn.classList.remove('animate-[pulse-glow_3s_infinite]');
-                runBtn.style.boxShadow = 'none'; // remove shadow
-                
-                terminal.classList.remove('hidden');
-                terminal.classList.add('flex');
-                terminalLines.innerHTML = '';
-                
-                const steps = [
-                    { text: '> Compiling vedant_brain.py...', delay: 500 },
-                    { text: '> Optimization flags: -O3 --agile', delay: 1200 },
-                    { text: '> Linking modules: [PyTorch, AWS, Docker, LangChain]...', delay: 2000 },
-                    { text: '> Running unit tests...', delay: 2800 },
-                    { text: '<span class="text-green-400">✔ 4032 tests passed</span>', delay: 3500 },
-                    { text: '> Executing main()...', delay: 4200 },
-                    { text: '<span class="text-accent-cyan font-bold blink">>> Output: Future Created</span>', delay: 5000 }
-                ];
+                (async () => {
+                    // Stop glow animation
+                    runBtn.classList.remove('animate-[pulse-glow_3s_infinite]');
+                    runBtn.style.boxShadow = 'none'; // remove shadow
+                    
+                    terminal.classList.remove('hidden');
+                    terminal.classList.add('flex');
+                    terminalLines.innerHTML = '';
 
-                steps.forEach(step => {
-                    setTimeout(() => {
+                    // Show loading state
+                    const loadingLine = document.createElement('div');
+                    loadingLine.innerHTML = '<span class="text-slate-400">Loading Python runtime...</span>';
+                    terminalLines.appendChild(loadingLine);
+
+                    // Lazy load Pyodide if not already loaded
+                    try {
+                        await loadPyodideIfNeeded();
+                        loadingLine.remove();
+                    } catch (error) {
+                        loadingLine.innerHTML = '<span class="text-red-400">Failed to load Python runtime. Please refresh the page.</span>';
+                        console.error('Pyodide loading error:', error);
+                        return;
+                    }
+
+                    let codeToRun = '';
+
+                    if (activeMode === 'static') {
+                        // Executable version of the demo code
+                        codeToRun = `
+class Human:
+    pass
+
+class Engineer(Human):
+    def __init__(self):
+        self.stack = ['PyTorch', 'AWS', 'Docker']
+        self.passion = 'AGI'
+
+    def innovate(self):
+        for _ in range(1):
+            code = 'Future Created'
+            return code
+
+e = Engineer()
+print('stack:', ', '.join(e.stack))
+print('passion:', e.passion)
+print('result:', e.innovate())
+                        `;
+                    } else {
+                        const code = (playgroundEditor?.value || '').trim();
+
+                        if (!code) {
+                            const line = document.createElement('div');
+                            line.innerHTML = '<span class="text-slate-500"># Write some code in the playground above and hit RUN.</span>';
+                            terminalLines.appendChild(line);
+                            return;
+                        }
+
+                        codeToRun = code;
+                    }
+
+                    // Show small preamble
+                    const preLines = [
+                        '> Booting Python sandbox via Pyodide...',
+                        activeMode === 'static'
+                            ? '> Executing vedant_brain.py demo snippet...'
+                            : '> Executing your playground code...'
+                    ];
+
+                    preLines.forEach(txt => {
                         const line = document.createElement('div');
-                        line.innerHTML = step.text;
+                        line.textContent = txt;
                         terminalLines.appendChild(line);
-                        // Auto scroll to bottom
+                    });
+
+                    terminalLines.appendChild(document.createElement('br'));
+
+                    try {
+                        const py = await pyodideReadyPromise;
+                        py.globals.set("user_code_js", codeToRun);
+                        
+                        // Run the code and get result, then convert to JS
+                        await py.runPythonAsync(`
+result = run_user_code(user_code_js)
+                        `);
+                        
+                        // Try to get result from dict first, fallback to globals
+                        const resultPy = py.globals.get('result');
+                        let stdout = '';
+                        let stderr = '';
+                        let error = null;
+                        
+                        try {
+                            // Try converting dict to JS
+                            if (resultPy && resultPy.toJs) {
+                                const resultJs = resultPy.toJs({dict_converter: Object.fromEntries});
+                                stdout = String(resultJs.stdout || '').trimEnd();
+                                stderr = String(resultJs.stderr || '').trimEnd();
+                                const errVal = resultJs.error;
+                                error = (errVal && errVal !== null && errVal !== 'None' && errVal !== '') ? String(errVal) : null;
+                            } else {
+                                // Fallback: read from Python globals directly
+                                stdout = String(py.runPython('exec_stdout') || '').trimEnd();
+                                stderr = String(py.runPython('exec_stderr') || '').trimEnd();
+                                const errVal = py.runPython('exec_error');
+                                error = (errVal && errVal !== null && errVal !== 'None' && errVal !== '') ? String(errVal) : null;
+                            }
+                        } catch (e) {
+                            // If dict conversion fails, use globals
+                            stdout = String(py.runPython('exec_stdout') || '').trimEnd();
+                            stderr = String(py.runPython('exec_stderr') || '').trimEnd();
+                            const errVal = py.runPython('exec_error');
+                            error = (errVal && errVal !== null && errVal !== 'None' && errVal !== '') ? String(errVal) : null;
+                        }
+
+                        if (error && error !== 'None' && error !== 'null' && error.trim() !== '') {
+                            const errHeader = document.createElement('div');
+                            errHeader.innerHTML = '<span class="text-red-400 font-bold">Traceback (most recent call last):</span>';
+                            terminalLines.appendChild(errHeader);
+
+                            const errBody = document.createElement('pre');
+                            errBody.className = 'text-[10px] sm:text-xs text-red-300 whitespace-pre-wrap font-mono';
+                            errBody.textContent = String(error);
+                            terminalLines.appendChild(errBody);
+                        } else {
+                            // Check if stdout has actual content (not just empty string or 'None')
+                            if (stdout && stdout !== 'None' && stdout.trim() !== '') {
+                                const outHeader = document.createElement('div');
+                                outHeader.innerHTML = '<span class="text-green-400 font-bold">Output:</span>';
+                                terminalLines.appendChild(outHeader);
+
+                                const outBody = document.createElement('pre');
+                                outBody.className = 'text-[10px] sm:text-xs text-slate-200 whitespace-pre-wrap font-mono';
+                                outBody.textContent = String(stdout);
+                                terminalLines.appendChild(outBody);
+                            } else {
+                                const noOut = document.createElement('div');
+                                noOut.innerHTML = '<span class="text-slate-500 text-[10px] sm:text-xs"># Code ran successfully with no stdout.</span>';
+                                terminalLines.appendChild(noOut);
+                            }
+
+                            if (stderr && stderr !== 'None' && stderr !== '') {
+                                const errHeader = document.createElement('div');
+                                errHeader.innerHTML = '<span class="text-yellow-400 font-bold">Stderr:</span>';
+                                terminalLines.appendChild(errHeader);
+
+                                const errBody = document.createElement('pre');
+                                errBody.className = 'text-[10px] sm:text-xs text-yellow-200 whitespace-pre-wrap font-mono';
+                                errBody.textContent = String(stderr);
+                                terminalLines.appendChild(errBody);
+                            }
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        const line = document.createElement('div');
+                        line.innerHTML = '<span class="text-red-400 font-bold">Runtime error in sandbox:</span>';
+                        terminalLines.appendChild(line);
+
+                        const body = document.createElement('pre');
+                        body.className = 'text-[10px] sm:text-xs text-red-300 whitespace-pre-wrap font-mono';
+                        body.textContent = String(err);
+                        terminalLines.appendChild(body);
+                    } finally {
                         terminal.scrollTop = terminal.scrollHeight;
-                    }, step.delay);
-                });
+                    }
+                })();
             });
         }
 
@@ -1139,6 +1463,81 @@
             if(cursorDot) cursorDot.style.display = 'none';
             if(cursorOutline) cursorOutline.style.display = 'none';
         }
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Copy Email to Clipboard
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Allow default mailto behavior, but also copy to clipboard
+                const email = link.getAttribute('href').replace('mailto:', '');
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(email).then(() => {
+                        // Show temporary feedback
+                        const originalText = link.innerHTML;
+                        link.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        setTimeout(() => {
+                            link.innerHTML = originalText;
+                        }, 2000);
+                    }).catch(() => {
+                        // Clipboard API failed, fallback to default behavior
+                    });
+                }
+            });
+        });
+
+        // Update tab roles and tabindex
+        if (tabStatic && tabPlayground && codeStatic && codePlayground) {
+            codeStatic.setAttribute('role', 'tabpanel');
+            codeStatic.setAttribute('id', 'code-static');
+            codeStatic.setAttribute('aria-labelledby', 'tab-static');
+            
+            codePlayground.setAttribute('role', 'tabpanel');
+            codePlayground.setAttribute('id', 'code-playground');
+            codePlayground.setAttribute('aria-labelledby', 'tab-playground');
+
+            // Keyboard navigation for tabs
+            [tabStatic, tabPlayground].forEach(tab => {
+                tab.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        const tabs = [tabStatic, tabPlayground];
+                        const currentIndex = tabs.indexOf(tab);
+                        const nextIndex = e.key === 'ArrowRight' 
+                            ? (currentIndex + 1) % tabs.length
+                            : (currentIndex - 1 + tabs.length) % tabs.length;
+                        tabs[nextIndex].click();
+                        tabs[nextIndex].focus();
+                    }
+                });
+            });
+        }
+
+        // Pause Three.js animation when tab is inactive (performance)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                // Tab is hidden, could pause animations here if needed
+            } else {
+                // Tab is visible again
+            }
+        });
     </script>
 </body>
 </html>
