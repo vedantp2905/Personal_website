@@ -104,10 +104,19 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Custom cursor only on desktop */
+        /* Custom cursor only on desktop and when user doesn't prefer reduced motion */
         @media (min-width: 768px) {
             body {
                 cursor: none;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                cursor: auto;
+            }
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
             }
         }
         
@@ -359,7 +368,7 @@
 
                     <div class="hero-reveal">
                         <p class="text-base sm:text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed mx-auto lg:mx-0">
-                            I'm <span class="text-white font-semibold">Vedant Pungliya</span>. An AI Engineer & Architect bridging the gap between abstract models and scalable infrastructure.
+                            I'm <span class="text-white font-semibold">Vedant Pungliya</span>. Full-stack engineer and AI/ML<br>builder—from cloud-native apps and APIs to LLMs and RAG. I ship across the stack and the cloud.
                         </p>
                     </div>
 
@@ -755,7 +764,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-                    <!-- Project 1: Nitro-Agent -->
+                    <!-- 1: Nitro -->
                     <a href="https://github.com/vedantp2905/Nitro-Agent" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
@@ -764,36 +773,22 @@
                             </div>
                             <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-emerald-400 transition-colors">Nitro-Agent: Secure Enclave Orchestrator</h3>
                             <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">
-                                AI compiler converting Python scripts to AWS Nitro Enclaves. Automates vsock rewrites, Docker builds, and Terraform for attested enterprise-grade security.
+                                AI-powered secure enclave orchestrator that turns standard Python scripts into production-ready AWS Nitro Enclaves. It rewrites code for vsock, builds a minimal Docker image, generates Terraform for EC2/KMS/IAM, and manages attested deployment—so you can ship hardware-isolated workloads on AWS without enclave or infra knowledge.
                             </p>
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">AWS</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Nitro Enclaves</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">LLMs</span>
                             </div>
-                        </div>
-                    </a>
-                    
-                    <!-- Project 2 -->
-                    <a href="https://github.com/vedantp2905/TravelBuddy" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-b from-accent-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-accent-purple/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500">
-                                <i class="fas fa-map-marked-alt text-lg sm:text-2xl text-accent-purple"></i>
-                            </div>
-                            <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-accent-purple transition-colors">TravelBuddy: AI Trip Planner</h3>
-                            <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">
-                                Scaled personalized recommendations to 1000+ users at 99.99% uptime using Spring Boot, a hyper-personalized LLM engine, and automated CI/CD.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
-                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Spring Boot</span>
-                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Android</span>
-                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">AI</span>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
                             </div>
                         </div>
                     </a>
-                    
-                    <!-- Project 3 -->
+
+                    <!-- 2: Bio -->
                     <a href="https://github.com/vedantp2905/BioSignify" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-b from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
@@ -802,17 +797,70 @@
                             </div>
                             <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-accent-blue transition-colors">BioSignify: ML E-Signature Platform</h3>
                             <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">
-                                Built a B2B platform using blockchain and vector databases; processes 100K+ authentications/day with 99.2% accuracy and sub-200ms latency.
+                                Secure e-signature platform with face verification, liveness checks, and full audit trails. Create and send agreements, verify signers with FaceNet, and manage teams with organization multi-tenancy.
                             </p>
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Python</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Blockchain</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Flask</span>
                             </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
+                            </div>
                         </div>
                     </a>
-                    
-                    <!-- Project 4 -->
+
+                    <!-- 3: Travel -->
+                    <a href="https://github.com/vedantp2905/TravelBuddy" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-b from-accent-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
+                            <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-accent-purple/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500">
+                                <i class="fas fa-map-marked-alt text-lg sm:text-2xl text-accent-purple"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-accent-purple transition-colors">TravelBuddy: AI Trip Planner</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">
+                                Full‑stack group travel companion app (Spring Boot backend + Android client) that lets friends chat in real time, react to messages, share and browse places, and run live polls to collaboratively plan trips.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
+                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Spring Boot</span>
+                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Android</span>
+                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">AI</span>
+                            </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 4: LLM Dungeon -->
+                    <a href="https://github.com/vedantp2905/llm-dungeon-ecosystem" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-b from-amber-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
+                            <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-500/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500">
+                                <i class="fas fa-dragon text-lg sm:text-2xl text-amber-500"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-amber-400 transition-colors">LLM-Powered Roguelike Dungeon</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">
+                                A C++/ncurses roguelike fused with Google Gemini, featuring personality‑based monster AI, an optional fully autonomous AI player, rich logging of “thoughts” and actions, and configurable data files—turning a classic dungeon crawler into a living lab for LLM‑powered game agents.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
+                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">C++</span>
+                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Gemini</span>
+                                <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">ncurses</span>
+                            </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 5: AI Database -->
                     <a href="https://github.com/vedantp2905/AI-Database-Assistant" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-b from-accent-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
@@ -828,10 +876,15 @@
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">SQLAlchemy</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">NLP</span>
                             </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
+                            </div>
                         </div>
                     </a>
-                    
-                    <!-- Project 5 -->
+
+                    <!-- 6: Emotion -->
                     <a href="https://github.com/vedantp2905/Advanced-Emotion-Recognition-FER-2013" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-b from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
@@ -839,16 +892,21 @@
                                 <i class="fas fa-smile text-lg sm:text-2xl text-pink-500"></i>
                             </div>
                             <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-pink-500 transition-colors">Emotion AI</h3>
-                            <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">Deep Learning system using ensemble CNNs to classify facial expressions with high accuracy.</p>
+                            <p class="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6 flex-grow leading-relaxed">Deep-learning–based facial expression recognition on the FER‑2013 dataset, with advanced CNN architectures, strong augmentation, and robust evaluation for real‑world emotion classification.</p>
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">PyTorch</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">CNN</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Keras</span>
                             </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
+                            </div>
                         </div>
                     </a>
-                    
-                    <!-- Project 6: Multi-Agent -->
+
+                    <!-- 7: Agentic Newsletter -->
                     <a href="https://github.com/vedantp2905/Multi_Agentic_Newsletter" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
@@ -861,10 +919,15 @@
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">CrewAI</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">LangChain</span>
                             </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
+                            </div>
                         </div>
                     </a>
 
-                    <!-- Project 7: RAG Debate -->
+                    <!-- 8: RAG Debate -->
                     <a href="https://github.com/vedantp2905/RAG_Debate" target="_blank" class="project-card group glass-panel rounded-2xl sm:rounded-3xl p-1 overflow-hidden relative active:scale-[0.98] sm:hover:-translate-y-2 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="bg-black/40 rounded-[18px] sm:rounded-[22px] p-5 sm:p-8 h-full relative z-10 flex flex-col">
@@ -876,6 +939,11 @@
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">RAG</span>
                                 <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/5 rounded text-[8px] sm:text-[10px] font-mono border border-white/5">Streamlit</span>
+                            </div>
+                            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 text-[10px] sm:text-xs text-slate-500 group-hover:text-slate-300 transition-colors">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View on GitHub</span>
+                                <i class="fas fa-external-link-alt text-[9px] opacity-70" aria-hidden="true"></i>
                             </div>
                         </div>
                     </a>
