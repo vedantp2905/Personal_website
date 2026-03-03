@@ -501,12 +501,12 @@
                 <!-- Background Glow -->
                 <div class="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-accent-blue/10 rounded-full blur-[60px] sm:blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
 
-                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-start">
                     <div class="text-center md:text-left">
                         <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Academic <span class="text-accent-cyan">Foundation</span></h2>
                         <div class="space-y-3 sm:space-y-4">
                             <h3 class="text-lg sm:text-xl font-bold">Iowa State University</h3>
-                            <p class="text-slate-300 text-sm sm:text-base">BS in Computer Science</p>
+                            <p class="text-slate-300 text-sm sm:text-base">BS in Computer Science · <a href="./Transcript.pdf" download class="text-accent-cyan hover:underline font-mono text-xs">Download Transcript</a></p>
                             <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3">
                                 <span class="px-2 sm:px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-[10px] sm:text-xs font-bold rounded-full">GPA: 3.99/4.00</span>
                                 <span class="text-slate-500 text-xs sm:text-sm">Expected May 2026</span>
@@ -525,11 +525,20 @@
                                 <span class="px-2 py-1 bg-green-500/10 text-green-400 text-[9px] sm:text-[10px] font-mono rounded border border-green-500/20">President's Scholar</span>
                             </div>
                         </div>
+
+                        <!-- Leadership -->
+                        <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
+                            <h4 class="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-widest mb-2 sm:mb-3">Leadership</h4>
+                            <ul class="text-xs sm:text-sm text-slate-300 space-y-1">
+                                <li>Lead, Computer Science Student Advisory Committee</li>
+                                <li>Supplemental Instruction (SI) Leader</li>
+                            </ul>
+                        </div>
                         
                         <!-- Certification -->
                         <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
                             <h4 class="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3 sm:mb-4">Certification</h4>
-                             <a href="https://www.credly.com/badges/8ba0cf13-4367-4942-aec2-71f693f1e1ed/public_url" target="_blank" class="flex items-center gap-3 sm:gap-4 group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-colors justify-center md:justify-start">
+                            <a href="https://www.credly.com/badges/8ba0cf13-4367-4942-aec2-71f693f1e1ed/public_url" target="_blank" class="flex items-center gap-3 sm:gap-4 group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-colors justify-center md:justify-start">
                                 <i class="fab fa-aws text-2xl sm:text-3xl text-orange-400 group-hover:scale-110 transition-transform"></i>
                                 <div class="text-left">
                                     <p class="font-bold text-white group-hover:text-orange-400 transition-colors text-sm sm:text-base">AWS Solutions Architect</p>
@@ -540,22 +549,24 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                        <div class="p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-center hover:bg-white/10 transition-colors">
-                            <div class="text-2xl sm:text-3xl font-bold text-accent-cyan mb-1">10+</div>
-                            <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">Projects</div>
-                        </div>
-                        <div class="p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-center hover:bg-white/10 transition-colors">
-                            <div class="text-2xl sm:text-3xl font-bold text-accent-purple mb-1">3.99</div>
-                            <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">GPA</div>
-                        </div>
-                        <div class="p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-center hover:bg-white/10 transition-colors">
-                            <div class="text-2xl sm:text-3xl font-bold text-accent-blue mb-1">4</div>
-                            <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">Internships</div>
-                        </div>
-                        <div class="p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-center hover:bg-white/10 transition-colors">
-                            <div class="text-2xl sm:text-3xl font-bold text-green-400 mb-1">2</div>
-                            <div class="text-[10px] sm:text-xs text-slate-400 font-mono uppercase">Leadership</div>
+                    <div class="flex justify-center items-center min-h-0 md:self-center">
+                        <div class="grid grid-cols-2 gap-5 sm:gap-8 max-w-sm sm:max-w-md">
+                            <div class="p-5 sm:p-8 bg-white/5 rounded-2xl sm:rounded-3xl border border-white/5 text-center hover:bg-white/10 transition-colors">
+                                <div class="text-4xl sm:text-5xl font-bold text-accent-cyan mb-2">10+</div>
+                                <div class="text-sm sm:text-base text-slate-400 font-mono uppercase">Projects</div>
+                            </div>
+                            <div class="p-5 sm:p-8 bg-white/5 rounded-2xl sm:rounded-3xl border border-white/5 text-center hover:bg-white/10 transition-colors">
+                                <div class="text-4xl sm:text-5xl font-bold text-accent-purple mb-2">3.99</div>
+                                <div class="text-sm sm:text-base text-slate-400 font-mono uppercase">GPA</div>
+                            </div>
+                            <div class="p-5 sm:p-8 bg-white/5 rounded-2xl sm:rounded-3xl border border-white/5 text-center hover:bg-white/10 transition-colors">
+                                <div class="text-4xl sm:text-5xl font-bold text-accent-blue mb-2">4</div>
+                                <div class="text-sm sm:text-base text-slate-400 font-mono uppercase">Internships</div>
+                            </div>
+                            <div class="p-5 sm:p-8 bg-white/5 rounded-2xl sm:rounded-3xl border border-white/5 text-center hover:bg-white/10 transition-colors">
+                                <div class="text-4xl sm:text-5xl font-bold text-green-400 mb-2">2</div>
+                                <div class="text-sm sm:text-base text-slate-400 font-mono uppercase">Leadership</div>
+                            </div>
                         </div>
                     </div>
                 </div>
